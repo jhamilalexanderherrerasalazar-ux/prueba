@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Asegura que la aplicación se adapte correctamente a pantallas de celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera App - Sistema de Gestión</title>
+    <!-- Cargamos Tailwind CSS para estilos modernos y responsivos sin escribir CSS manual -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Tarjeta Principal del Sistema -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-slate-200">
+        
+        <!-- Encabezado -->
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-slate-800">Panel de Control</h1>
+            <p class="text-slate-500 text-sm mt-1">Validador Inicial de Conexión</p>
+        </div>
+
+        <!-- Indicador de Estado -->
+        <div id="estado-caja" class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 text-center">
+            <span class="text-blue-700 font-medium text-sm">Estado del Sistema: Listo para operar</span>
+        </div>
+
+        <!-- Botón de Acción Principal -->
+        <button id="btn-accion" 
+                onclick="ejecutarAccion()" 
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 shadow-md hover:shadow-lg">
+            Probar Interacción
+        </button>
+
+    </div>
+
+    <!-- Script de Lógica del Cliente -->
+    <script>
+        // Función ejecutada al hacer clic en el botón
+        function ejecutarAccion() {
+            // Capturamos el elemento contenedor del estado
+            const cajaEstado = document.getElementById('estado-caja');
+            
+            // Actualizamos visualmente el mensaje y los colores
+            cajaEstado.className = "bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-6 text-center";
+            cajaEstado.innerHTML = '<span class="text-emerald-700 font-bold text-sm">¡Conexión Exitosa! El Frontend responde correctamente.</span>';
+        }
+    </script>
+</body>
+</html>
